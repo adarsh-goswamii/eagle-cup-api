@@ -2,6 +2,9 @@ import os
 from pydantic_settings import BaseSettings
 from typing import ClassVar
 from functools import lru_cache
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class DBConfig:
   """
@@ -18,8 +21,8 @@ class AppDBConfig(DBConfig):
   """
   db_name: str = os.getenv("DB_NAME", "localhost")
   db_host: str = os.getenv("DB_HOST", "postgres")
-  db_username: str = os.getenv("DB_USERNAME", "eagle-cup")
-  db_password: str = os.getenv("DB_PASSWORD", "")
+  db_username: str = os.getenv("DB_USERNAME")
+  db_password: str = os.getenv("DB_PASSWORD", "admin")
   
 class BaseConfig(BaseSettings):
   """

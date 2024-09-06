@@ -9,6 +9,8 @@ pydantic = "*"
 pydantic-settings = "*"
 typing = "*"
 fastapi = "*"
+python-dotenv = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
